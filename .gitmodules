@@ -1,0 +1,6 @@
+[submodule "InitialPackage"]
+	path = InitialPackage
+	url = https://github.com/Game2Day/InitialPackage.git
+[submodule "Assets/InitialPackage"]
+	path = Assets/InitialPackage
+	url = https://github.com/Game2Day/InitialPackage.git
