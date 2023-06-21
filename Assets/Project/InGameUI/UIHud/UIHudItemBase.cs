@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace Project
 {
-    public abstract class UIHudItem : MonoBehaviour
+    public abstract class UIHudItemBase : MonoBehaviour
     {
         [SerializeField]
         protected Vector3 _offset = Vector3.zero;
@@ -15,9 +15,6 @@ namespace Project
 
         [SerializeField, EnabledIf(nameof(_isLerp), true, EnabledIfAttribute.HideMode.Invisible)]
         protected float _lerpSpeed = 1f;
-         
-        [SerializeField]
-        protected TextMeshProUGUI _text = null;
         
         private Vector2 _expectedPosition = Vector2.zero;
 
@@ -45,10 +42,8 @@ namespace Project
             get;
         }
          
-        protected override void Awake()
+        protected  void Awake()
         {
-            base.Awake();
-            
             _transform = (RectTransform)transform;
             _allUI = gameObject.GetComponentsInChildren<UIBehaviour>();
         }
@@ -90,11 +85,11 @@ namespace Project
         {
             if (IsVisible)
             {
-                EnableVisual();
+               // EnableVisual();
             }
             else
             {
-                DisableVisual();
+                //DisableVisual();
             }
         }
         
